@@ -49,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				58725F202A224F49004BB56E /* GifApp */,
-				58725F472A2257BE004BB56E /* Helpers */,
 				58725F1F2A224F49004BB56E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +68,7 @@
 				58725F372A224F8B004BB56E /* Presentation */,
 				58725F412A225779004BB56E /* Models */,
 				58725F402A225747004BB56E /* Services */,
+				58725F472A2257BE004BB56E /* Helpers */,
 				58725F352A224F7F004BB56E /* Resources */,
 			);
 			path = GifApp;
