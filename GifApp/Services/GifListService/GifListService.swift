@@ -51,7 +51,23 @@ final class GifListService {
     }
     
     func gifFindRequest(keyword: String, gifs: Int) -> URLRequest {
-        URLRequest.makeRequest(path: "search?api_key=\(Constants.apiKey)&q=\(keyword)&limit=\(gifs)&offset=0&rating=g&lang=en")
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.giphy.com"
+        urlComponents.path = "/v1/gifs/search"
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "q", value: keyword),
+            URLQueryItem(name: "api_key", value: "\(Constants.apiKey)"),
+            URLQueryItem(name: "limit", value: String(gifs))
+        ]
+      
+        guard let url = urlComponents.url else {
+            return URLRequest(url: URL(string: "")!) }
+        let request = URLRequest.makeRequest(url: url)
+        
+        return request
     }
     
 }

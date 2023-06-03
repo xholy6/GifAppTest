@@ -67,6 +67,7 @@ final class GifListCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        cellImageView.kf.cancelDownloadTask()
         cellImageView.image = nil
     }
     
